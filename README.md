@@ -13,11 +13,10 @@ iCESugar-nano
 * [Reference](#reference)
 
 # iCESugar-nano
-iCESugar-nano is a FPGA board base on Lattice iCE40LP1K-CM36, which is fully supported by the open source toolchain (yosys & nextpnr & icestorm), 14 usable IOs fan-out with 3 standard PMOD interface, the on board debugger iCELink (base on ARM Mbed DAPLink) support drag-and-drop program, you can just drag the FPGA bitstream into the virtual disk to program, the iCELink also provide a adjustable clock to FPGA, and with a additional USB CDC serial port direct connect to FPGA, so you can only use one TYPE-C cable to develop and test.
-![icesugar_nano_1](https://github.com/wuxx/icesugar-nano/blob/main/doc/icesugar_nano_1.jpg)
-![icesugar_nano_3](https://github.com/wuxx/icesugar-nano/blob/main/doc/icesugar_nano_3.jpg)
-![icesugar_nano_top](https://github.com/wuxx/icesugar-nano/blob/main/doc/icesugar-nano-top.png)
-![icesugar_nano_bottom](https://github.com/wuxx/icesugar-nano/blob/main/doc/icesugar-nano-bottom.png)
+iCESugar-nano is a FPGA board base on Lattice iCE40LP1K-CM36, which is fully supported by the open source toolchain (yosys & nextpnr & icestorm), 14 usable IOs fan-out with 3 standard PMOD interface, the on board debugger iCELink (base on ARM Mbed DAPLink) support drag-and-drop program, you can just drag the FPGA bitstream into the virtual disk to program, the iCELink also provide a adjustable clock to FPGA, and with a additional USB CDC serial port direct connect to FPGA, so you can only use one TYPE-C cable to develop and test.  
+<div align=center>
+<img src="https://github.com/wuxx/icesugar-nano/blob/main/doc/icesugar_nano_1.jpg" width = "700" alt="" align=center />    
+</div>
 
 # Hardware
 ### iCE40LP1K
@@ -38,8 +37,8 @@ iCE40LP1K-CM36 (BGA36 0.4mm pitch)
 iCESugar-nano has a on board debugger named iCELink (base on APM32F1)，you can only use one USB wire to program the FPGA and debug, here is detail:   
 1. drag-and-drop program, just drop the bitstream into the virtual USB DISK iCELink, then wait a few second, the iCELink firmware will do the total program work
 3. USB CDC serial port, it can use to communicate with FPGA
-3. the MCO can provide 8MHz/12MHz/36MHz/72MHz clock for FPGA as extern clock. (control with icesprog)
-you can also use the command tool `icesprog` to flash or do more config, here is the help info
+3. the MCO can provide 8MHz/12MHz/36MHz/72MHz clock for FPGA as extern clock. 
+4. use the command tool `icesprog` to flash or do more config, here is the help info
 ```
 $icesprog -h
 usage: /home/pi/oss/icesugar/tools/icesprog.arm [OPTION] [FILE]
@@ -56,6 +55,28 @@ usage: /home/pi/oss/icesugar/tools/icesprog.arm [OPTION] [FILE]
              -h | --help                    display help info
 
              -- version 1.1a --
+
+```
+#### Tips
+The iCELink on iCESugar-nano can adjust the mco clock between 8/12/36/72MHz, here is the usage. note: the mco clk will return to the default 12MHz after perform a board power-off power-on reset.
+```
+$icesprog -c ?
+CLK -> [12MHz]
+CLK-SELECT:
+        [1]:  8MHz
+        [2]: 12MHz
+        [3]: 36MHz
+        [4]: 72MHz
+done
+
+$icesprog -c 1
+CLK -> [ 8MHz]
+CLK-SELECT:
+        [1]:  8MHz
+        [2]: 12MHz
+        [3]: 36MHz
+        [4]: 72MHz
+done
 
 ```
 
