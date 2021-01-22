@@ -1,0 +1,7 @@
+set_io LED B4
+
+set_io clk D1
+
+set_io RX  A3
+set_io TX  B3
+

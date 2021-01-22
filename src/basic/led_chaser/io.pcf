@@ -1,0 +1,15 @@
+set_io LED B4
+
+set_io CLK D1
+
+set_io RX  A3
+set_io TX  B3
+
+set_io LED[0] C6
+set_io LED[1] E3
+set_io LED[2] C2
+set_io LED[3] A1
+set_io LED[4] B4
+set_io LED[5] B5
+set_io LED[6] E1
+set_io LED[7] B1

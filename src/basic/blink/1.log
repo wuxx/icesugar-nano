@@ -1,0 +1,798 @@
+Makefile:5: iCELink path: 
+yosys -p "synth_ice40 -json switch.json -blif switch.blif" switch.v
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2019  Clifford Wolf <clifford@clifford.at>           |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.9+932 (git sha1 f8d5920a, gcc 8.3.0-6+rpi1 -fPIC -Os)
+
+
+-- Parsing `switch.v' using frontend `verilog' --
+
+1. Executing Verilog-2005 frontend: switch.v
+Parsing Verilog input from `switch.v' to AST representation.
+Generating RTLIL representation for module `\switch'.
+Successfully finished Verilog frontend.
+
+-- Running command `synth_ice40 -json switch.json -blif switch.blif' --
+
+2. Executing SYNTH_ICE40 pass.
+
+2.1. Executing Verilog-2005 frontend: /usr/local/bin/../share/yosys/ice40/cells_sim.v
+Parsing Verilog input from `/usr/local/bin/../share/yosys/ice40/cells_sim.v' to AST representation.
+Generating RTLIL representation for module `\SB_IO'.
+Generating RTLIL representation for module `\SB_GB_IO'.
+Generating RTLIL representation for module `\SB_GB'.
+Generating RTLIL representation for module `\SB_LUT4'.
+Generating RTLIL representation for module `\SB_CARRY'.
+Generating RTLIL representation for module `\SB_DFF'.
+Generating RTLIL representation for module `\SB_DFFE'.
+Generating RTLIL representation for module `\SB_DFFSR'.
+Generating RTLIL representation for module `\SB_DFFR'.
+Generating RTLIL representation for module `\SB_DFFSS'.
+Generating RTLIL representation for module `\SB_DFFS'.
+Generating RTLIL representation for module `\SB_DFFESR'.
+Generating RTLIL representation for module `\SB_DFFER'.
+Generating RTLIL representation for module `\SB_DFFESS'.
+Generating RTLIL representation for module `\SB_DFFES'.
+Generating RTLIL representation for module `\SB_DFFN'.
+Generating RTLIL representation for module `\SB_DFFNE'.
+Generating RTLIL representation for module `\SB_DFFNSR'.
+Generating RTLIL representation for module `\SB_DFFNR'.
+Generating RTLIL representation for module `\SB_DFFNSS'.
+Generating RTLIL representation for module `\SB_DFFNS'.
+Generating RTLIL representation for module `\SB_DFFNESR'.
+Generating RTLIL representation for module `\SB_DFFNER'.
+Generating RTLIL representation for module `\SB_DFFNESS'.
+Generating RTLIL representation for module `\SB_DFFNES'.
+Generating RTLIL representation for module `\SB_RAM40_4K'.
+Generating RTLIL representation for module `\SB_RAM40_4KNR'.
+Generating RTLIL representation for module `\SB_RAM40_4KNW'.
+Generating RTLIL representation for module `\SB_RAM40_4KNRNW'.
+Generating RTLIL representation for module `\ICESTORM_LC'.
+Generating RTLIL representation for module `\SB_PLL40_CORE'.
+Generating RTLIL representation for module `\SB_PLL40_PAD'.
+Generating RTLIL representation for module `\SB_PLL40_2_PAD'.
+Generating RTLIL representation for module `\SB_PLL40_2F_CORE'.
+Generating RTLIL representation for module `\SB_PLL40_2F_PAD'.
+Generating RTLIL representation for module `\SB_WARMBOOT'.
+Generating RTLIL representation for module `\SB_SPRAM256KA'.
+Generating RTLIL representation for module `\SB_HFOSC'.
+Generating RTLIL representation for module `\SB_LFOSC'.
+Generating RTLIL representation for module `\SB_RGBA_DRV'.
+Generating RTLIL representation for module `\SB_LED_DRV_CUR'.
+Generating RTLIL representation for module `\SB_RGB_DRV'.
+Generating RTLIL representation for module `\SB_I2C'.
+Generating RTLIL representation for module `\SB_SPI'.
+Generating RTLIL representation for module `\SB_LEDDA_IP'.
+Generating RTLIL representation for module `\SB_FILTER_50NS'.
+Generating RTLIL representation for module `\SB_IO_I3C'.
+Generating RTLIL representation for module `\SB_IO_OD'.
+Generating RTLIL representation for module `\SB_MAC16'.
+Generating RTLIL representation for module `\ICESTORM_RAM'.
+Successfully finished Verilog frontend.
+
+2.2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.2.1. Finding top of design hierarchy..
+root of   0 design levels: switch              
+Automatically selected switch as design top module.
+
+2.2.2. Analyzing design hierarchy..
+Top module:  \switch
+
+2.2.3. Analyzing design hierarchy..
+Top module:  \switch
+Removed 0 unused modules.
+
+2.3. Executing PROC pass (convert processes to netlists).
+
+2.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+2.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+2.3.4. Executing PROC_INIT pass (extract init attributes).
+
+2.3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+2.3.6. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+2.3.7. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+2.3.8. Executing PROC_DFF pass (convert process syncs to FFs).
+
+2.3.9. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.4. Executing FLATTEN pass (flatten design).
+No more expansions possible.
+
+2.5. Executing TRIBUF pass.
+
+2.6. Executing DEMINOUT pass (demote inout ports to input or output).
+
+2.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module switch.
+
+2.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \switch..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+2.9. Executing CHECK pass (checking for obvious problems).
+checking module switch..
+found and reported 0 problems.
+
+2.10. Executing OPT pass (performing simple optimizations).
+
+2.10.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module switch.
+
+2.10.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\switch'.
+Removed a total of 0 cells.
+
+2.10.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \switch..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+2.10.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \switch.
+Performed a total of 0 changes.
+
+2.10.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\switch'.
+Removed a total of 0 cells.
+
+2.10.6. Executing OPT_RMDFF pass (remove dff with constant values).
+
+2.10.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \switch..
+
+2.10.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module switch.
+
+2.10.9. Finished OPT passes. (There is nothing left to do.)
+
+2.11. Executing WREDUCE pass (reducing word size of cells).
+
+2.12. Executing PEEPOPT pass (run peephole optimizers).
+
+2.13. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \switch..
+
+2.14. Executing SHARE pass (SAT-based resource sharing).
+
+2.15. Executing TECHMAP pass (map to technology primitives).
+
+2.15.1. Executing Verilog-2005 frontend: /usr/local/bin/../share/yosys/cmp2lut.v
+Parsing Verilog input from `/usr/local/bin/../share/yosys/cmp2lut.v' to AST representation.
+Generating RTLIL representation for module `\_90_lut_cmp_'.
+Successfully finished Verilog frontend.
+
+2.15.2. Continuing TECHMAP pass.
+No more expansions possible.
+
+2.16. Executing OPT_EXPR pass (perform const folding).
+Optimizing module switch.
+
+2.17. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \switch..
+
+2.18. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module switch:
+  created 0 $alu and 0 $macc cells.
+
+2.19. Executing OPT pass (performing simple optimizations).
+
+2.19.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module switch.
+
+2.19.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\switch'.
+Removed a total of 0 cells.
+
+2.19.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \switch..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+2.19.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \switch.
+Performed a total of 0 changes.
+
+2.19.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\switch'.
+Removed a total of 0 cells.
+
+2.19.6. Executing OPT_RMDFF pass (remove dff with constant values).
+
+2.19.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \switch..
+
+2.19.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module switch.
+
+2.19.9. Finished OPT passes. (There is nothing left to do.)
+
+2.20. Executing FSM pass (extract and optimize FSM).
+
+2.20.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+2.20.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+2.20.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+2.20.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \switch..
+
+2.20.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+2.20.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+2.20.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+2.20.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+2.21. Executing OPT pass (performing simple optimizations).
+
+2.21.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module switch.
+
+2.21.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\switch'.
+Removed a total of 0 cells.
+
+2.21.3. Executing OPT_RMDFF pass (remove dff with constant values).
+
+2.21.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \switch..
+
+2.21.5. Finished fast OPT passes.
+
+2.22. Executing MEMORY pass.
+
+2.22.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+2.22.2. Executing MEMORY_DFF pass (merging $dff cells to $memrd and $memwr).
+
+2.22.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \switch..
+
+2.22.4. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+2.22.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \switch..
+
+2.22.6. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+2.23. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \switch..
+
+2.24. Executing MEMORY_BRAM pass (mapping $mem cells to block memories).
+
+2.25. Executing TECHMAP pass (map to technology primitives).
+
+2.25.1. Executing Verilog-2005 frontend: /usr/local/bin/../share/yosys/ice40/brams_map.v
+Parsing Verilog input from `/usr/local/bin/../share/yosys/ice40/brams_map.v' to AST representation.
+Generating RTLIL representation for module `\$__ICE40_RAM4K'.
+Generating RTLIL representation for module `\$__ICE40_RAM4K_M0'.
+Generating RTLIL representation for module `\$__ICE40_RAM4K_M123'.
+Successfully finished Verilog frontend.
+
+2.25.2. Continuing TECHMAP pass.
+No more expansions possible.
+
+2.26. Executing ICE40_BRAMINIT pass.
+
+2.27. Executing OPT pass (performing simple optimizations).
+
+2.27.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module switch.
+
+2.27.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\switch'.
+Removed a total of 0 cells.
+
+2.27.3. Executing OPT_RMDFF pass (remove dff with constant values).
+
+2.27.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \switch..
+
+2.27.5. Finished fast OPT passes.
+
+2.28. Executing MEMORY_MAP pass (converting $mem cells to logic and flip-flops).
+
+2.29. Executing OPT pass (performing simple optimizations).
+
+2.29.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module switch.
+
+2.29.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\switch'.
+Removed a total of 0 cells.
+
+2.29.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \switch..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+2.29.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \switch.
+Performed a total of 0 changes.
+
+2.29.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\switch'.
+Removed a total of 0 cells.
+
+2.29.6. Executing OPT_RMDFF pass (remove dff with constant values).
+
+2.29.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \switch..
+
+2.29.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module switch.
+
+2.29.9. Finished OPT passes. (There is nothing left to do.)
+
+2.30. Executing ICE40_WRAPCARRY pass (wrap carries).
+
+2.31. Executing TECHMAP pass (map to technology primitives).
+
+2.31.1. Executing Verilog-2005 frontend: /usr/local/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/usr/local/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+2.31.2. Executing Verilog-2005 frontend: /usr/local/bin/../share/yosys/ice40/arith_map.v
+Parsing Verilog input from `/usr/local/bin/../share/yosys/ice40/arith_map.v' to AST representation.
+Generating RTLIL representation for module `\_80_ice40_alu'.
+Successfully finished Verilog frontend.
+
+2.31.3. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $logic_not.
+No more expansions possible.
+<suppressed ~1 debug messages>
+
+2.32. Executing ICE40_OPT pass (performing simple optimizations).
+
+2.32.1. Running ICE40 specific optimizations.
+
+2.32.2. Executing OPT_EXPR pass (perform const folding).
+Optimizing module switch.
+
+2.32.3. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\switch'.
+Removed a total of 0 cells.
+
+2.32.4. Executing OPT_RMDFF pass (remove dff with constant values).
+
+2.32.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \switch..
+
+2.32.6. Finished OPT passes. (There is nothing left to do.)
+
+2.33. Executing DFFSR2DFF pass (mapping DFFSR cells to simpler FFs).
+
+2.34. Executing DFF2DFFE pass (transform $dff to $dffe where applicable).
+Selected cell types for direct conversion:
+  $_DFF_PP1_ -> $__DFFE_PP1
+  $_DFF_PP0_ -> $__DFFE_PP0
+  $_DFF_PN1_ -> $__DFFE_PN1
+  $_DFF_PN0_ -> $__DFFE_PN0
+  $_DFF_NP1_ -> $__DFFE_NP1
+  $_DFF_NP0_ -> $__DFFE_NP0
+  $_DFF_NN1_ -> $__DFFE_NN1
+  $_DFF_NN0_ -> $__DFFE_NN0
+  $_DFF_N_ -> $_DFFE_NP_
+  $_DFF_P_ -> $_DFFE_PP_
+Transforming FF to FF+Enable cells in module switch:
+
+2.35. Executing TECHMAP pass (map to technology primitives).
+
+2.35.1. Executing Verilog-2005 frontend: /usr/local/bin/../share/yosys/ice40/cells_map.v
+Parsing Verilog input from `/usr/local/bin/../share/yosys/ice40/cells_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DFF_N_'.
+Generating RTLIL representation for module `\$_DFF_P_'.
+Generating RTLIL representation for module `\$_DFFE_NN_'.
+Generating RTLIL representation for module `\$_DFFE_PN_'.
+Generating RTLIL representation for module `\$_DFFE_NP_'.
+Generating RTLIL representation for module `\$_DFFE_PP_'.
+Generating RTLIL representation for module `\$_DFF_NN0_'.
+Generating RTLIL representation for module `\$_DFF_NN1_'.
+Generating RTLIL representation for module `\$_DFF_PN0_'.
+Generating RTLIL representation for module `\$_DFF_PN1_'.
+Generating RTLIL representation for module `\$_DFF_NP0_'.
+Generating RTLIL representation for module `\$_DFF_NP1_'.
+Generating RTLIL representation for module `\$_DFF_PP0_'.
+Generating RTLIL representation for module `\$_DFF_PP1_'.
+Generating RTLIL representation for module `\$__DFFE_NN0'.
+Generating RTLIL representation for module `\$__DFFE_NN1'.
+Generating RTLIL representation for module `\$__DFFE_PN0'.
+Generating RTLIL representation for module `\$__DFFE_PN1'.
+Generating RTLIL representation for module `\$__DFFE_NP0'.
+Generating RTLIL representation for module `\$__DFFE_NP1'.
+Generating RTLIL representation for module `\$__DFFE_PP0'.
+Generating RTLIL representation for module `\$__DFFE_PP1'.
+Successfully finished Verilog frontend.
+
+2.35.2. Continuing TECHMAP pass.
+No more expansions possible.
+
+2.36. Executing OPT_EXPR pass (perform const folding).
+Optimizing module switch.
+
+2.37. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+2.38. Executing ICE40_FFINIT pass (implement FF init values).
+Handling FF init values in switch.
+
+2.39. Executing ICE40_FFSSR pass (merge synchronous set/reset into FF cells).
+Merging set/reset $_MUX_ cells into SB_FFs in switch.
+
+2.40. Executing ICE40_OPT pass (performing simple optimizations).
+
+2.40.1. Running ICE40 specific optimizations.
+
+2.40.2. Executing OPT_EXPR pass (perform const folding).
+Optimizing module switch.
+
+2.40.3. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\switch'.
+Removed a total of 0 cells.
+
+2.40.4. Executing OPT_RMDFF pass (remove dff with constant values).
+
+2.40.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \switch..
+
+2.40.6. Finished OPT passes. (There is nothing left to do.)
+
+2.41. Executing TECHMAP pass (map to technology primitives).
+
+2.41.1. Executing Verilog-2005 frontend: /usr/local/bin/../share/yosys/ice40/latches_map.v
+Parsing Verilog input from `/usr/local/bin/../share/yosys/ice40/latches_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DLATCH_N_'.
+Generating RTLIL representation for module `\$_DLATCH_P_'.
+Successfully finished Verilog frontend.
+
+2.41.2. Continuing TECHMAP pass.
+No more expansions possible.
+
+2.42. Executing ABC pass (technology mapping using ABC).
+
+2.42.1. Extracting gate netlist of module `\switch' to `<abc-temp-dir>/input.blif'..
+Extracted 1 gates and 2 wires to a netlist network with 1 inputs and 1 outputs.
+
+2.42.1.1. Executing ABC.
+Running ABC command: <yosys-exe-dir>/yosys-abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lut <abc-temp-dir>/lutdefs.txt 
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + dch -f 
+ABC: + if 
+ABC: + mfs2 
+ABC: + lutpack -S 1 
+ABC: + dress 
+ABC: Total number of equiv classes                =       2.
+ABC: Participating nodes from both networks       =       2.
+ABC: Participating nodes from the first network   =       1. (  50.00 % of nodes)
+ABC: Participating nodes from the second network  =       1. (  50.00 % of nodes)
+ABC: Node pairs (any polarity)                    =       1. (  50.00 % of names can be moved)
+ABC: Node pairs (same polarity)                   =       1. (  50.00 % of names can be moved)
+ABC: Total runtime =     0.00 sec
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+2.42.1.2. Re-integrating ABC results.
+ABC RESULTS:              $lut cells:        1
+ABC RESULTS:        internal signals:        0
+ABC RESULTS:           input signals:        1
+ABC RESULTS:          output signals:        1
+Removing temp directory.
+
+2.43. Executing ICE40_WRAPCARRY pass (wrap carries).
+
+2.44. Executing TECHMAP pass (map to technology primitives).
+
+2.44.1. Executing Verilog-2005 frontend: /usr/local/bin/../share/yosys/ice40/cells_map.v
+Parsing Verilog input from `/usr/local/bin/../share/yosys/ice40/cells_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DFF_N_'.
+Generating RTLIL representation for module `\$_DFF_P_'.
+Generating RTLIL representation for module `\$_DFFE_NN_'.
+Generating RTLIL representation for module `\$_DFFE_PN_'.
+Generating RTLIL representation for module `\$_DFFE_NP_'.
+Generating RTLIL representation for module `\$_DFFE_PP_'.
+Generating RTLIL representation for module `\$_DFF_NN0_'.
+Generating RTLIL representation for module `\$_DFF_NN1_'.
+Generating RTLIL representation for module `\$_DFF_PN0_'.
+Generating RTLIL representation for module `\$_DFF_PN1_'.
+Generating RTLIL representation for module `\$_DFF_NP0_'.
+Generating RTLIL representation for module `\$_DFF_NP1_'.
+Generating RTLIL representation for module `\$_DFF_PP0_'.
+Generating RTLIL representation for module `\$_DFF_PP1_'.
+Generating RTLIL representation for module `\$__DFFE_NN0'.
+Generating RTLIL representation for module `\$__DFFE_NN1'.
+Generating RTLIL representation for module `\$__DFFE_PN0'.
+Generating RTLIL representation for module `\$__DFFE_PN1'.
+Generating RTLIL representation for module `\$__DFFE_NP0'.
+Generating RTLIL representation for module `\$__DFFE_NP1'.
+Generating RTLIL representation for module `\$__DFFE_PP0'.
+Generating RTLIL representation for module `\$__DFFE_PP1'.
+Successfully finished Verilog frontend.
+
+2.44.2. Continuing TECHMAP pass.
+No more expansions possible.
+Removed 0 unused cells and 2 unused wires.
+
+2.45. Executing OPT_LUT pass (optimize LUTs).
+Discovering LUTs.
+Number of LUTs:        1
+  1-LUT                1
+
+Eliminating LUTs.
+Number of LUTs:        1
+  1-LUT                1
+
+Combining LUTs.
+Number of LUTs:        1
+  1-LUT                1
+
+Eliminated 0 LUTs.
+Combined 0 LUTs.
+<suppressed ~2 debug messages>
+
+2.46. Executing TECHMAP pass (map to technology primitives).
+
+2.46.1. Executing Verilog-2005 frontend: /usr/local/bin/../share/yosys/ice40/cells_map.v
+Parsing Verilog input from `/usr/local/bin/../share/yosys/ice40/cells_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DFF_N_'.
+Generating RTLIL representation for module `\$_DFF_P_'.
+Generating RTLIL representation for module `\$_DFFE_NN_'.
+Generating RTLIL representation for module `\$_DFFE_PN_'.
+Generating RTLIL representation for module `\$_DFFE_NP_'.
+Generating RTLIL representation for module `\$_DFFE_PP_'.
+Generating RTLIL representation for module `\$_DFF_NN0_'.
+Generating RTLIL representation for module `\$_DFF_NN1_'.
+Generating RTLIL representation for module `\$_DFF_PN0_'.
+Generating RTLIL representation for module `\$_DFF_PN1_'.
+Generating RTLIL representation for module `\$_DFF_NP0_'.
+Generating RTLIL representation for module `\$_DFF_NP1_'.
+Generating RTLIL representation for module `\$_DFF_PP0_'.
+Generating RTLIL representation for module `\$_DFF_PP1_'.
+Generating RTLIL representation for module `\$__DFFE_NN0'.
+Generating RTLIL representation for module `\$__DFFE_NN1'.
+Generating RTLIL representation for module `\$__DFFE_PN0'.
+Generating RTLIL representation for module `\$__DFFE_PN1'.
+Generating RTLIL representation for module `\$__DFFE_NP0'.
+Generating RTLIL representation for module `\$__DFFE_NP1'.
+Generating RTLIL representation for module `\$__DFFE_PP0'.
+Generating RTLIL representation for module `\$__DFFE_PP1'.
+Generating RTLIL representation for module `\$lut'.
+Successfully finished Verilog frontend.
+
+2.46.2. Continuing TECHMAP pass.
+Using template $paramod\$lut\WIDTH=1\LUT=2'01 for cells of type $lut.
+No more expansions possible.
+<suppressed ~14 debug messages>
+Removed 0 unused cells and 2 unused wires.
+
+2.47. Executing AUTONAME pass.
+Renamed 1 objects in module switch (2 iterations).
+<suppressed ~1 debug messages>
+
+2.48. Executing HIERARCHY pass (managing design hierarchy).
+
+2.48.1. Analyzing design hierarchy..
+Top module:  \switch
+
+2.48.2. Analyzing design hierarchy..
+Top module:  \switch
+Removed 0 unused modules.
+
+2.49. Printing statistics.
+
+=== switch ===
+
+   Number of wires:                  2
+   Number of wire bits:              2
+   Number of public wires:           2
+   Number of public wire bits:       2
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  1
+     SB_LUT4                         1
+
+2.50. Executing CHECK pass (checking for obvious problems).
+checking module switch..
+found and reported 0 problems.
+
+2.51. Executing BLIF backend.
+
+2.52. Executing JSON backend.
+
+End of script. Logfile hash: d6c9ffb7ba
+CPU: user 3.45s system 0.16s, MEM: 35.74 MB total, 31.11 MB resident
+Yosys 0.9+932 (git sha1 f8d5920a, gcc 8.3.0-6+rpi1 -fPIC -Os)
+Time spent: 59% 11x read_verilog (2 sec), 17% 1x share (0 sec), ...
+nextpnr-ice40 --lp1k --package cm36 --json switch.json --pcf ./io.pcf --asc switch.asc --freq 48
+Info: constrained 'LED' to bel 'X7/Y17/io0'
+Info: constrained 'SW' to bel 'X13/Y11/io1'
+
+Info: Packing constants..
+Info: Packing IOs..
+Info: Packing LUT-FFs..
+Info:        1 LCs used as LUT4 only
+Info:        0 LCs used as LUT4 and DFF
+Info: Packing non-LUT FFs..
+Info:        0 LCs used as DFF only
+Info: Packing carries..
+Info:        0 LCs used as CARRY only
+Info: Packing RAMs..
+Info: Placing PLLs..
+Info: Packing special functions..
+Info: Promoting globals..
+Info: Constraining chains...
+Info:        0 LCs used to legalise carry chains.
+Info: Checksum: 0x8077d405
+
+Info: Annotating ports with timing budgets for target frequency 48.00 MHz
+Info: Checksum: 0x0c993603
+
+Info: Device utilisation:
+Info: 	         ICESTORM_LC:     3/ 1280     0%
+Info: 	        ICESTORM_RAM:     0/   16     0%
+Info: 	               SB_IO:     2/  112     1%
+Info: 	               SB_GB:     0/    8     0%
+Info: 	        ICESTORM_PLL:     0/    1     0%
+Info: 	         SB_WARMBOOT:     0/    1     0%
+
+Info: Placed 2 cells based on constraints.
+Info: Creating initial analytic placement for 1 cells, random placement wirelen = 14.
+Info:     at initial placer iter 0, wirelen = 12
+Info:     at initial placer iter 1, wirelen = 12
+Info:     at initial placer iter 2, wirelen = 12
+Info:     at initial placer iter 3, wirelen = 12
+Info: Running main analytical placer.
+Info:     at iteration #1, type ICESTORM_LC: wirelen solved = 12, spread = 12, legal = 12; time = 0.00s
+Info: HeAP Placer Time: 0.01s
+Info:   of which solving equations: 0.00s
+Info:   of which spreading cells: 0.00s
+Info:   of which strict legalisation: 0.00s
+
+Info: Running simulated annealing placer for refinement.
+Info:   at iteration #1: temp = 0.000000, timing cost = 0, wirelen = 12
+Info:   at iteration #2: temp = 0.000000, timing cost = 0, wirelen = 12 
+Info: SA placement time 0.00s
+Warning: No clocks found in design
+
+Info: Max delay <async> -> <async>: 4.72 ns
+
+Info: Slack histogram:
+Info:  legend: * represents 1 endpoint(s)
+Info:          + represents [1,1) endpoint(s)
+Info: [ 16111,  16112) |* 
+Info: [ 16112,  16113) | 
+Info: [ 16113,  16114) | 
+Info: [ 16114,  16115) | 
+Info: [ 16115,  16116) | 
+Info: [ 16116,  16117) | 
+Info: [ 16117,  16118) | 
+Info: [ 16118,  16119) | 
+Info: [ 16119,  16120) | 
+Info: [ 16120,  16121) | 
+Info: [ 16121,  16122) | 
+Info: [ 16122,  16123) | 
+Info: [ 16123,  16124) | 
+Info: [ 16124,  16125) | 
+Info: [ 16125,  16126) | 
+Info: [ 16126,  16127) | 
+Info: [ 16127,  16128) | 
+Info: [ 16128,  16129) | 
+Info: [ 16129,  16130) | 
+Info: [ 16130,  16131) | 
+Info: Checksum: 0x05d4f669
+
+Info: Routing..
+Info: Setting up routing queue.
+Info: Routing 2 arcs.
+Info:            |   (re-)routed arcs  |   delta    | remaining
+Info:    IterCnt |  w/ripup   wo/ripup |  w/r  wo/r |      arcs
+Info:          2 |        0          2 |    0     2 |         0
+Info: Routing complete.
+Info: Route time 0.01s
+Info: Checksum: 0x18b81091
+Warning: No clocks found in design
+
+Info: Critical path report for cross-domain path '<async>' -> '<async>':
+Info: curr total
+Info:  0.0  0.0  Source SW$sb_io.D_IN_0
+Info:  1.9  1.9    Net SW$SB_IO_IN budget 9.839000 ns (13,11) -> (8,13)
+Info:                Sink LED_SB_LUT4_O_LC.I3
+Info:  0.5  2.3  Source LED_SB_LUT4_O_LC.O
+Info:  1.9  4.2    Net LED$SB_IO_OUT budget 10.184000 ns (8,13) -> (7,17)
+Info:                Sink LED$sb_io.D_OUT_0
+Info: 0.5 ns logic, 3.8 ns routing
+
+Info: Max delay <async> -> <async>: 4.22 ns
+
+Info: Slack histogram:
+Info:  legend: * represents 1 endpoint(s)
+Info:          + represents [1,1) endpoint(s)
+Info: [ 16610,  16611) |* 
+Info: [ 16611,  16612) | 
+Info: [ 16612,  16613) | 
+Info: [ 16613,  16614) | 
+Info: [ 16614,  16615) | 
+Info: [ 16615,  16616) | 
+Info: [ 16616,  16617) | 
+Info: [ 16617,  16618) | 
+Info: [ 16618,  16619) | 
+Info: [ 16619,  16620) | 
+Info: [ 16620,  16621) | 
+Info: [ 16621,  16622) | 
+Info: [ 16622,  16623) | 
+Info: [ 16623,  16624) | 
+Info: [ 16624,  16625) | 
+Info: [ 16625,  16626) | 
+Info: [ 16626,  16627) | 
+Info: [ 16627,  16628) | 
+Info: [ 16628,  16629) | 
+Info: [ 16629,  16630) | 
+2 warnings, 0 errors
+icepack switch.asc switch.bin

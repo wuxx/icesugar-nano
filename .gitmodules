@@ -1,0 +1,3 @@
+[submodule "src/advanced/learn-fpga"]
+	path = src/advanced/learn-fpga
+	url = https://github.com/wuxx/learn-fpga.git
