@@ -5,8 +5,8 @@ module switch(  input CLK,
       
    reg [25:0] counter;
 
-   //assign LED = ~counter[23];
-   assign LED = ~counter[21];
+   assign LED = ~counter[23];
+   //assign LED = ~counter[21];
 
    initial begin
       counter = 0;
