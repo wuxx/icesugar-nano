@@ -23,8 +23,7 @@ iCESugar-nano is a FPGA board base on Lattice iCE40LP1K-CM36, which is fully sup
 iCE40LP1K-CM36 (BGA36 0.4mm pitch)
 1. 1280 Logic Cells (LUT + Flip-Flop)  
 2. 64K bit RAM (4K bit RAM x 16)
-3. PLL x 1
-4. High Current LED Drivers x 3
+3. High Current LED Drivers x 3
 
 ### SPI-Flash
  SPI Flash use W25Q16 (2MB)
