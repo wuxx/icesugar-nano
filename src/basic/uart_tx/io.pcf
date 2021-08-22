@@ -1,4 +1,4 @@
-set_io LED B4
+set_io LED B6
 
 set_io clk D1
 
