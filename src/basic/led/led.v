@@ -2,6 +2,6 @@
 
 module switch( output LED );
       
-  assign LED = 0;
+  assign LED = 1;
 
 endmodule
