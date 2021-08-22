@@ -56,6 +56,8 @@ usage: /home/pi/oss/icesugar/tools/icesprog.arm [OPTION] [FILE]
              -- version 1.1a --
 
 ```
+
+You can find `icesprog` [here](https://github.com/wuxx/icesugar/tree/master/tools)
 #### Tips
 The iCELink on iCESugar-nano can adjust the mco clock between 8/12/36/72MHz, here is the usage. note: the mco clock will return to the default 12MHz after perform a board power-off power-on reset.
 ```
