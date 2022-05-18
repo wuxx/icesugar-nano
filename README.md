@@ -99,7 +99,7 @@ gcc toolchain reference [riscv-gnu-toolchain](https://pingu98.wordpress.com/2019
 Alternatively, you can download the pre-built toolchain provided by xPack or SiFive
 + https://xpack.github.io/riscv-none-embed-gcc/install/
 + https://www.sifive.com/software
-`icesprog` is command tool for iCESugar program，it depend libusb and hidapi  
++ `icesprog` is command tool stand for iCESugar Program，it depend libusb and hidapi  
 `$sudo apt-get install libhidapi-dev`  
 `$sudo apt-get install libusb-1.0-0-dev`  
 
@@ -112,7 +112,7 @@ now you can use the msys2 environment to setup the open source toolchain easily,
 select the yosys, nextpnr, icestorm, icesprog and install, after installed, everything is same as in linux!
 
 # How-to-buy
-you can buy iCESugar-nano and PMOD peripherals from our offcial aliexpress shop [Muse Lab Factory Store](https://miusecn-muselab-tech.aliexpress.com/)
+you can buy iCESugar-nano and PMOD peripherals from our offcial aliexpress shop [Muse Lab Factory Store](https://miusecntech-muselab.aliexpress.com/)
 
 # Reference
 ### icestorm toolchain
