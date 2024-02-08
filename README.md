@@ -112,7 +112,7 @@ now you can use the msys2 environment to setup the open source toolchain easily,
 select the yosys, nextpnr, icestorm, icesprog and install, after installed, everything is same as in linux!
 
 # How-to-buy
-you can buy iCESugar-nano and PMOD peripherals from our offcial aliexpress shop [Muse Lab Factory Store](https://miusecntech-muselab.aliexpress.com/)
+you can buy iCESugar-nano and PMOD peripherals from our offcial aliexpress shop [Muse Lab Factory Store](https://www.aliexpress.us/item/3256801887502111.html)
 
 # Reference
 ### icestorm toolchain
